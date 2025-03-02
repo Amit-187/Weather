@@ -1,3 +1,8 @@
+let temp = document.getElementById('temp');
+let maxTemp = document.getElementById('max-temp');
+let minTemp = document.getElementById('min-temp');
+let humid = document.getElementById('humid');
+let cityName = document.getElementById('city-name');
 
 async function weatherReport() {
     try {
@@ -7,10 +12,11 @@ async function weatherReport() {
         const response = await fetch(url + `&appid=${apiKey}`);
         var data = await response.json();
         if (response.ok) {
-            const head = document.createElement('h3');
-            let temp = document.createTextNode(`Temp : ${parseInt(data.main.temp)}`);
-            head.appendChild(temp)
-            document.getElementById('report').appendChild(head);
+            cityName.innerHTML = `<h2>${data.name}</h2>`
+            temp.innerHTML = `<h4>Temp : ${parseInt(data.main.temp)}<sup>o</sup>C</h4>`
+            maxTemp.innerHTML = `<h4>Max. Temp : ${parseInt(data.main.temp_max)}<sup>o</sup>C</h4>`
+            minTemp.innerHTML = `<h4>Min. Temp : ${parseInt(data.main.temp_min)}<sup>o</sup>C</h4>`
+            humid.innerHTML = `<h4>Humidity : ${parseInt(data.main.humidity)}<sup>o</sup>C</h4>`
         }
         else {
             city = '';
@@ -22,3 +28,6 @@ async function weatherReport() {
     }
 }
 
+document.getElementById('reset').addEventListener('click',() => {
+    window.location.reload();
+})

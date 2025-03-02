@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -12,11 +13,17 @@
         <div class="weather">
             <form action="#">
                 <h1>Weather</h1>
+                <hr>
                 <input type="text" placeholder="Enter City name" id="city">
                 <button onclick="weatherReport();">Search</button>
+                <button id="reset" type="button">Reset</button>
             </form>
             <div id="report">
-               
+               <h2 id="city-name">--</h2>
+               <h3 id="temp">Temp : --</h3>
+               <h3 id="max-temp">Max. Temp : --</h3>
+               <h3 id="min-temp">Min. Temp : --</h3>
+               <h3 id="humid">Humidity : --</h3>
             </div>
         </div>
     </div>

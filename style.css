@@ -1,0 +1,37 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #212121;
+}
+
+.weather{
+    /* color: white; */
+    background-color: aliceblue;
+    /* background-image: url(images/Screenshot\ 2025-03-02\ 113257.png); */
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 8px 5px;
+    margin: 8% 30%;
+    border-radius: 10px;
+}
+
+h1{
+    text-align: center;
+}
+
+#city-name{
+    text-align: center;
+}
+
+#city{
+    text-align: center;
+    width: 70%;
+    font-size: 12px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+button{
+    padding: 5px 15px;
+    border-radius: 50px;
+}
